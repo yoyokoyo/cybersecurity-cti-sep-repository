@@ -1,0 +1,7 @@
+{
+  "id": "x_sysmon_process_name.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "x_sysmon_process_name",
+  "description": "Version of the image associated with the main process (child) (field name in Sysmon is FileVersion)",
+  "type": "string"
+}

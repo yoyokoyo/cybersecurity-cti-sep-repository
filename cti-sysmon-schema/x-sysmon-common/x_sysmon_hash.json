@@ -1,0 +1,30 @@
+{
+  "id": "x_sysmon_hash.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "x_sysmon_hash",
+  "description": "Hashes captured by Sysmon driver (field name in Sysmon is Hashes)",
+  "type": "object",
+  "patternProperties":{
+
+	"^MD5$": {
+	"type": "string",
+	"description": "Specifies the MD5 message digest algorithm.",
+	"pattern": "^[a-fA-F0-9]{32}$"
+	},
+
+	"^SHA1$": {
+	"type": "string",
+	"description": "Specifies the SHA\u00ad-1 (secure-\u00adhash algorithm 1) cryptographic hash function.",
+	"pattern": "^[a-fA-F0-9]{40}$"
+	},
+
+	"^SHA256$": {
+	"type": "string",
+	"description": "Specifies the SHA-\u00ad256 cryptographic hash function (part of the SHA\u00ad2 family).",
+	"pattern": "^[a-fA-F0-9]{64}$"
+	}
+
+	}
+
+
+}

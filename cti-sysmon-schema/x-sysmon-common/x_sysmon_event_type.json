@@ -1,0 +1,7 @@
+{
+  "id": "x_sysmon_event_type.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "x_sysmon_event_type",
+  "description": "registry event. Either Create or Delete (field name in Sysmon is EventType)",
+  "type": "string"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "x_sysmon_file_name.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "x_sysmon_file_name",
+  "description": "Full path name of the file (field name in Sysmon is TargetFilename)",
+  "type": "string"
+}

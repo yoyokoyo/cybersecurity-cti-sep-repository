@@ -1,0 +1,7 @@
+{
+  "id": "x_sysmon_target_process_path.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "x_sysmon_target_process_path",
+  "description": "File path of the target process (field name in Sysmon is TargetImage)",
+  "type": "string"
+}

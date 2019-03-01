@@ -1,0 +1,7 @@
+{
+  "id": "x_sysmon_process_name.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "x_sysmon_process_name",
+  "description": "The name of the executable without full path related to the process being spawned/created in the event. Considered also the child or source process (field name in Sysmon is Image)",
+  "type": "string"
+}

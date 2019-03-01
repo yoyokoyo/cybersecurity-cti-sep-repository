@@ -1,0 +1,7 @@
+{
+  "id": "x_sysmon_pipe_name.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "x_sysmon_pipe_name",
+  "description": "Name of the pipe created (field name in Sysmon is PipeName)",
+  "type": "string"
+}

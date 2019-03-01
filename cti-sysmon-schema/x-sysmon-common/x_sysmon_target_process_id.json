@@ -1,0 +1,7 @@
+{
+  "id": "x_sysmon_target_process_id.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "x_sysmon_target_process_id",
+  "description": "Process ID used by the os to identify the target process (field name in Sysmon is TargetProcessId)",
+  "type": "integer"
+}

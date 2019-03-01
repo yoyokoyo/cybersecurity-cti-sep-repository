@@ -1,0 +1,7 @@
+{
+  "id": "x_sysmon_process_path.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "x_sysmon_process_path",
+  "description": "File path of the process being spawned/created. Considered also the child or source process (field name in Sysmon is Image)",
+  "type": "string"
+}

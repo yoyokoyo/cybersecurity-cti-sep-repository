@@ -1,0 +1,7 @@
+{
+  "id": "x_sysmon_registry_key_path.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "x_sysmon_registry_key_path",
+  "description": "complete path of the registry key (field name in Sysmon is TargetObject)",
+  "type": "string"
+}

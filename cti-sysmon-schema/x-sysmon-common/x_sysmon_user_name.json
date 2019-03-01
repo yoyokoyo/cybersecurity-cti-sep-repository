@@ -1,0 +1,7 @@
+{
+  "id": "x_sysmon_user_name.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "x_sysmon_user_name",
+  "description": "Name of the account who created the process (child) . It usually contains domain name and user name (Parsed to show only username without the domain) (field name in Sysmon is User)",
+  "type": "string"
+}

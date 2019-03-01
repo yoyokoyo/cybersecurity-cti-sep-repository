@@ -1,0 +1,7 @@
+{
+  "id": "x_sysmon_tag.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "x_sysmon_tag",
+  "description": "Custom tag mapped to event. i.e ATT&CK technique ID (field name in Sysmon is RuleName)",
+  "type": "string"
+}

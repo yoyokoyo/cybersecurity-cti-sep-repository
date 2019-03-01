@@ -1,0 +1,7 @@
+{
+  "id": "x_sysmon_wmi_operation.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "x_sysmon_wmi_operation",
+  "description": "wmievent filter operation (field name in Sysmon is Operation)",
+  "type": "string"
+}

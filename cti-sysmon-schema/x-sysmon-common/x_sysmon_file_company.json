@@ -1,0 +1,7 @@
+{
+  "id": "x_sysmon_file_company.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "x_sysmon_file_company",
+  "description": "Company name the image associated with the main process (child) belongs to (field name in Sysmon is Company)",
+  "type": "string"
+}
