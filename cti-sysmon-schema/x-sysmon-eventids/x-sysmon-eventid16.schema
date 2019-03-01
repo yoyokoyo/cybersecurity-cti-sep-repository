@@ -1,0 +1,35 @@
+{
+   "id": "x-sysmon-eventid16.schema",
+   "$schema": "http://json-schema.org/draft-04/schema#",
+   "title": "x-sysmon-eventid16",
+   "description": "This is a representation of Sysmon's Event ID 16 (Sysmon Config State Changed) schema. This event logs when the local sysmon configuration is updated.",
+   "type": "object",
+   "properties": {
+
+	"type": {
+		"type": "string",
+		"description": "The value of this property MUST be `x-sysmon-eventid16`.",
+		"enum": ["x-sysmon-eventid16"]
+		},
+
+	"x_sysmon_event_date_creation": {
+		"$ref": "../x_sysmon_common/x_sysmon_event_date_creation.json",
+		"description": "Time in UTC when event was created (field name in Sysmon is UtcTime)"
+		},
+
+	"x_sysmon_sysmon_configuration": {
+                "type": "string",
+                "description": "name of the sysmon config file being updated (Field in Sysmon is Configuration)"
+                },
+
+        "x_sysmon_sysmon_configuration_hash": {
+                "type": "string",
+                "description": "hash (SHA1) of the sysmon config file being updated (Field in Sysmon is ConfigurationFileHash)"
+                }
+
+
+    },
+    "additionalProperties": false,
+    "required":["type"]
+
+}

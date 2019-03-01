@@ -1,0 +1,54 @@
+{
+   "id": "x-sysmon-eventid2.schema",
+   "$schema": "http://json-schema.org/draft-04/schema#",
+   "title": "x-sysmon-eventid2",
+   "description": "This is a representation of Sysmon's Event ID 2 (A process changed a file creation time) schema. The change file creation time event is registered when a file creation time is explicitly modified by a process.",
+   "type": "object",
+   "properties": {
+
+	"type": {
+		"type": "string",
+		"description": "The value of this property MUST be `x-sysmon-eventid2`.",
+		"enum": ["x-sysmon-eventid2"]
+		},
+
+	"x_sysmon_event_date_creation": {
+		"$ref": "../x_sysmon_common/x_sysmon_event_date_creation.json",
+		"description": "Time in UTC when event was created (field name in Sysmon is UtcTime)"
+		},
+
+	"x_sysmon_process_guid": {
+                "$ref": "../x_sysmon_common/x_sysmon_process_guid.json",
+                "description": "Process Guid of the process that changed the file creation time (field name in Sysmon is ProcessGuid)"
+                },
+
+	"x_sysmon_process_id": {
+                "$ref": "../x_sysmon_common/x_sysmon_process_id.json",
+                "description": "Process ID used by the os to identify the process changing the file creation time(field name in Sysmon is ProcessId)"
+                },
+
+	"x_sysmon_process_name": {
+                "$ref": "../x_sysmon_common/x_sysmon_process_name.json",
+                "description": "File path of the process that changed the file creation time (field name in Sysmon is Image)"
+                },
+
+	"x_sysmon_file_name": {
+                "$ref": "../x_sysmon_common/x_sysmon_file_name.json",
+                "description": "full path name of the file (field name in Sysmon is TargetFilename)"
+                },
+
+	"x_sysmon_file_creation_time": {
+                "$ref": "../x_sysmon_common/x_sysmon_file_creation_time.json",
+                "description": "new creation time of the file (field name in Sysmon is CreationUtcTime)"
+                },
+
+	"x_sysmon_file_previous_creation_time":{
+		"$ref":"../x_sysmon_common/x_sysmon_file_creation_time.json",
+		"description": "Previous creation time of the file (field name in Sysmon is PreviousCreationUtcTime)"
+		}
+
+    },
+    "additionalProperties": false,
+    "required":["type"]
+
+}

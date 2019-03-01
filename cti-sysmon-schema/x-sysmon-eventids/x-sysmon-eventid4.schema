@@ -1,0 +1,39 @@
+{
+   "id": "x-sysmon-eventid4.schema",
+   "$schema": "http://json-schema.org/draft-04/schema#",
+   "title": "x-sysmon-eventid4",
+   "description": "This is a representation of Sysmon's Event ID 4 (Sysmon service state changed) schema. The service state change event reports the state of the Sysmon service (started or stopped).",
+   "type": "object",
+   "properties": {
+
+	"type": {
+		"type": "string",
+		"description": "The value of this property MUST be `x-sysmon-eventid4`.",
+		"enum": ["x-sysmon-eventid4"]
+		},
+
+	"x_sysmon_event_date_creation": {
+		"$ref": "../x_sysmon_common/x_sysmon_event_date_creation.json",
+		"description": "Time in UTC when event was created (field name in Sysmon is UtcTime)"
+		},
+
+	"x_sysmon_file_version": {
+                "$ref": "../x_sysmon_common/x_sysmon_file_version.json",
+                "description": "Sysmon version(field name in Sysmon is Version)"
+                },
+
+	"x_sysmon_service_state":{
+                "type":"string",
+                "description": "Sysmon service state (i.e. stopped) (field name in Sysmon is State)"
+                },
+
+	"x_sysmon_schema_version":{
+                "type":"string",
+                "description": "Sysmon config schema version (field name in Sysmon is SchemaVersion)"
+                }
+
+    },
+    "additionalProperties": false,
+    "required":["type"]
+
+}

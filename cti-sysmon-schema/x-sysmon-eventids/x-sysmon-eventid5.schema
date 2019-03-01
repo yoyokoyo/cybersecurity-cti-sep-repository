@@ -1,0 +1,44 @@
+{
+   "id": "x-sysmon-eventid5.schema",
+   "$schema": "http://json-schema.org/draft-04/schema#",
+   "title": "x-sysmon-eventid5",
+   "description": "This is a representation of Sysmon's Event ID 5 (Process terminated) schema. The process terminate event reports when a process terminates.",
+   "type": "object",
+   "properties": {
+
+	"type": {
+		"type": "string",
+		"description": "The value of this property MUST be `x-sysmon-eventid5`.",
+		"enum": ["x-sysmon-eventid5"]
+		},
+
+	"x_sysmon_event_date_creation": {
+		"$ref": "../x_sysmon_common/x_sysmon_event_date_creation.json",
+		"description": "Time in UTC when event was created (field name in Sysmon is UtcTime)"
+		},
+
+	"x_sysmon_process_guid": {
+                "$ref": "../x_sysmon_common/x_sysmon_process_guid.json",
+                "description": "Process Guid of the process that got spawned/created (child) (field name in Sysmon is ProcessGuid)"
+                },
+
+	"x_sysmon_process_id": {
+                "$ref": "../x_sysmon_common/x_sysmon_process_id.json",
+                "description": "Process ID used by the os to identify the created process (child) (field name in Sysmon is ProcessId)"
+                },
+
+	"x_sysmon_process_name": {
+                "$ref": "../x_sysmon_common/x_sysmon_process_name.json",
+                "description": "The name of the executable without full path related to the process being spawned/created in the event. Considered also the child or source process (field name in Sysmon is Image)"
+                },
+
+	"x_sysmon_process_path": {
+                "$ref": "../x_sysmon_common/x_sysmon_process_path.json",
+                "description": "File path of the process being spawned/created. Considered also the child or source process (field name in Sysmon is Image)"
+                }
+
+    },
+    "additionalProperties": false,
+    "required":["type"]
+
+}

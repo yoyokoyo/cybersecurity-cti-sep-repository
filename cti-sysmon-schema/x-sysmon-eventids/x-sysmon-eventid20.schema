@@ -1,0 +1,59 @@
+{
+   "id": "x-sysmon-eventid20.schema",
+   "$schema": "http://json-schema.org/draft-04/schema#",
+   "title": "x-sysmon-eventid20",
+   "description": "This is a representation of Sysmon's Event ID 20 (WmiEvent (WmiEventConsumer activity detected)) schema. This event logs the registration of WMI consumers, recording the consumer name, log, and destination.",
+   "type": "object",
+   "properties": {
+
+	"type": {
+		"type": "string",
+		"description": "The value of this property MUST be `x-sysmon-eventid20`.",
+		"enum": ["x-sysmon-eventid20"]
+		},
+
+        "x_sysmon_tag": {
+                "$ref": "../x_sysmon_common/x_sysmon_tag.json",
+                "description": "Custom tag mapped to event. i.e ATT&CK technique ID (Field name in Sysmon is RuleName)"
+                },
+
+        "x_sysmon_event_type": {
+                "$ref": "../x_sysmon_common/x_sysmon_event_type.json",
+                "description": "wmievent type (Field name in Sysmon is EventType)"
+                },
+
+	"x_sysmon_event_date_creation": {
+		"$ref": "../x_sysmon_common/x_sysmon_event_date_creation.json",
+		"description": "Time in UTC when event was created (field name in Sysmon is UtcTime)"
+		},
+
+	"x_sysmon_wmi_operation": {
+                "$ref": "../x_sysmon_common/x_sysmon_wmi_operation.json",
+                "description": "wmievent filter operation (field name in Sysmon is Operation)"
+                },
+
+	"x_sysmon_user_name": {
+                "$ref": "../x_sysmon_common/x_sysmon_user_name.json",
+                "description": "Name of the account who created the process (child) . It usually contains domain name and user name (Parsed to show only username without the domain) (field name in Sysmon is ParentCommandLine)"
+                },
+
+	"x_sysmon_wmi_consumer_name": {
+                "type": "string",
+                "description": "name of the consumer created (Field name in Sysmon is Name)"
+                },
+
+        "x_sysmon_wmi_consumer_type": {
+                "type": "string",
+                "description": "Type of wmi consumer (Field name in Sysmon is Type)"
+                },
+
+        "x_sysmon_wmi_consumer_destination": {
+                "type": "string",
+                "description": "command of consumer (Field name in Sysmon is Destination)"
+                }
+
+    },
+    "additionalProperties": false,
+    "required":["type"]
+
+}

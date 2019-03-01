@@ -1,0 +1,80 @@
+{
+   "id": "x-sysmon-eventid10.schema",
+   "$schema": "http://json-schema.org/draft-04/schema#",
+   "title": "x-sysmon-eventid10",
+   "description": "This is a representation of Sysmon's Event ID 10 (ProcessAccess) schema. The process accessed event reports when a process opens another process.",
+   "type": "object",
+   "properties": {
+
+	"type": {
+		"type": "string",
+		"description": "The value of this property MUST be `x-sysmon-eventid10`.",
+		"enum": ["x-sysmon-eventid10"]
+		},
+
+	"x_sysmon_event_date_creation": {
+		"$ref": "../x_sysmon_common/x_sysmon_event_date_creation.json",
+		"description": "Time in UTC when event was created (field name in Sysmon is UtcTime)"
+		},
+
+	"x_sysmon_process_guid": {
+                "$ref": "../x_sysmon_common/x_sysmon_process_guid.json",
+                "description": "Process Guid of the process that got spawned/created (child) (field name in Sysmon is ProcessGuid)"
+                },
+
+	"x_sysmon_process_id": {
+                "$ref": "../x_sysmon_common/x_sysmon_process_id.json",
+                "description": "Process ID used by the os to identify the created process (child) (field name in Sysmon is ProcessId)"
+                },
+
+	"x_sysmon_thread_id": {
+                "type": "integer",
+                "description": "ID of the specific thread inside of the source process that opened another process. (field in Sysmon is SourceThreadId)."
+                },
+
+
+	"x_sysmon_process_name": {
+                "$ref": "../x_sysmon_common/x_sysmon_process_name.json",
+                "description": "The name of the executable without full path related to the process being spawned/created in the event. Considered also the child or source process (field name in Sysmon is Image)"
+                },
+
+	"x_sysmon_process_path": {
+                "$ref": "../x_sysmon_common/x_sysmon_process_path.json",
+                "description": "File path of the process being spawned/created. Considered also the child or source process (field name in Sysmon is Image)"
+                },
+
+	"x_sysmon_target_process_guid": {
+                "$ref": "../x_sysmon_common/x_sysmon_target_process_guid.json",
+                "description": "Process Guid of the target process (field name in Sysmon is TargetProcessGuid)"
+                },
+
+	"x_sysmon_target_process_id": {
+                "$ref": "../x_sysmon_common/x_sysmon_target_process_id.json",
+                "description": "Process ID used by the os to identify the target process (field name in Sysmon is TargetProcessId)"
+                },
+
+	"x_sysmon_target_process_name": {
+                "$ref": "../x_sysmon_common/x_sysmon_target_process_name.json",
+                "description": "The name of the executable of the target process (field name in Sysmon is TargetImage)"
+                },
+
+	"x_sysmon_target_process_path": {
+                "$ref": "../x_sysmon_common/x_sysmon_target_process_path.json",
+                "description": "File path of the target process (field name in Sysmon is TargetImage)"
+                },
+
+	"x_sysmon_process_granted_access":{
+                "type":"string",
+                "description": "The access flags (bitmask) associated with the process rights requested for the target process (field name in Sysmon is GrantedAccess)"
+                },
+
+	"x_sysmon_process_call_trace":{
+                "type":"string",
+                "description": "Stack trace of where open process is called. Included is the DLL and the relative virtual address of the functions in the call stack right before the open process call (field name in Sysmon is CallTrace)"
+                }
+
+    },
+    "additionalProperties": false,
+    "required":["type"]
+
+}

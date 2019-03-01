@@ -1,0 +1,59 @@
+{
+   "id": "x-sysmon-eventid19.schema",
+   "$schema": "http://json-schema.org/draft-04/schema#",
+   "title": "x-sysmon-eventid19",
+   "description": "This is a representation of Sysmon's Event ID 19 (WmiEvent (WmiEventFilter activity detected)) schema. This event logs when a WMI event filter is registered, which is a method used by malware to execute.",
+   "type": "object",
+   "properties": {
+
+	"type": {
+		"type": "string",
+		"description": "The value of this property MUST be `x-sysmon-eventid19`.",
+		"enum": ["x-sysmon-eventid19"]
+		},
+
+        "x_sysmon_tag": {
+                "$ref": "../x_sysmon_common/x_sysmon_tag.json",
+                "description": "Custom tag mapped to event. i.e ATT&CK technique ID (Field name in Sysmon is RuleName)"
+                },
+
+        "x_sysmon_event_type": {
+                "$ref": "../x_sysmon_common/x_sysmon_event_type.json",
+                "description": "wmievent type (Field name in Sysmon is EventType)"
+                },
+
+	"x_sysmon_event_date_creation": {
+		"$ref": "../x_sysmon_common/x_sysmon_event_date_creation.json",
+		"description": "Time in UTC when event was created (field name in Sysmon is UtcTime)"
+		},
+
+	"x_sysmon_process_wmi_operation": {
+                "$ref": "../x_sysmon_common/x_sysmon_wmi_operation.json",
+                "description": "wmievent filter operation (field name in Sysmon is Operation)"
+                },
+
+	"x_sysmon_user_name": {
+                "$ref": "../x_sysmon_common/x_sysmon_user_name.json",
+                "description": "Name of the account who created the process (child) . It usually contains domain name and user name (Parsed to show only username without the domain) (field name in Sysmon is ParentCommandLine)"
+                },
+
+	"x_sysmon_wmi_namespace": {
+                "type": "string",
+                "description": "event namespace where the wmi clas (Field name in Sysmon is EventNamespace)"
+                },
+
+        "x_sysmon_wmi_filter_name": {
+                "type": "string",
+                "description": "Wmi filter name being created (Field name in Sysmon is Name)"
+                },
+
+        "x_sysmon_wmi_query": {
+                "type": "string",
+                "description": "wmi filter query (Field name in Sysmon is Query)"
+                }
+
+    },
+    "additionalProperties": false,
+    "required":["type"]
+
+}

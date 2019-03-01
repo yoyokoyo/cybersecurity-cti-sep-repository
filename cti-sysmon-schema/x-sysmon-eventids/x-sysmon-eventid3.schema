@@ -1,0 +1,99 @@
+{
+   "id": "x-sysmon-eventid3.schema",
+   "$schema": "http://json-schema.org/draft-04/schema#",
+   "title": "x-sysmon-eventid3",
+   "description": "This is a representation of Sysmon's Event ID 3 (Network connection) schema. The network connection event logs TCP/UDP connections on the machine.",
+   "type": "object",
+   "properties": {
+
+	"type": {
+		"type": "string",
+		"description": "The value of this property MUST be `x-sysmon-eventid3`.",
+		"enum": ["x-sysmon-eventid3"]
+		},
+
+	"x_sysmon_event_date_creation": {
+		"$ref": "../x_sysmon_common/x_sysmon_event_date_creation.json",
+		"description": "Time in UTC when event was created (field name in Sysmon is UtcTime)"
+		},
+
+	"x_sysmon_process_guid": {
+                "$ref": "../x_sysmon_common/x_sysmon_process_guid.json",
+                "description": "Process Guid of the process that made the network connection(field name in Sysmon is ProcessGuid)"
+                },
+
+	"x_sysmon_process_id": {
+                "$ref": "../x_sysmon_common/x_sysmon_process_id.json",
+                "description": "Process ID used by the os to identify the process that made the network connection (field name in Sysmon is ProcessId)"
+                },
+
+	"x_sysmon_process_name": {
+                "$ref": "../x_sysmon_common/x_sysmon_process_name.json",
+                "description": "File path of the process that made the network connection(field name in Sysmon is Image)"
+                },
+
+	"x_sysmon_user_name": {
+                "$ref": "../x_sysmon_common/x_sysmon_user_name.json",
+                "description": "Name of the account who made the network connection. It usually containes domain name and user name (field name in Sysmon is User)"
+                },
+
+	"x_sysmon_network_protocol":{
+		"type":"string",
+		"description": "Protocol being used for the network connection (field name in Sysmon is Protocol)"
+		},
+
+        "x_sysmon_network_connection_initiated":{
+                "type":"boolean",
+                "description": "Indicated process initiated tcp connection (field name in Sysmon is Initiated)"
+                },
+
+        "x_sysmon_src_is_ipv6":{
+                "type":"boolean",
+                "description": "is the source ip an Ipv6 (field name in Sysmon is SourceIsIpv6)"
+                },
+
+        "x_sysmon_src_ip":{
+                "type":"string",
+                "description": "source ip address that made the network connection (field name in Sysmon is SourceIp)"
+                },
+
+        "x_sysmon_src_host_name":{
+                "type":"string",
+                "description": "name of the host that made the network connection (field name in Sysmon is SourceHostname)"
+                },
+
+        "x_sysmon_src_port":{
+                "type":"integer",
+                "description": "Source port number (field name in Sysmon is SourcePort)"
+                },
+
+        "x_sysmon_src_port_name":{
+                "type":"string",
+                "description": "name of the source port being used (i.e. netbios-dgm) (field name in Sysmon is SourcePortName)"
+                },
+
+        "x_sysmon_dst_is_ipv6":{
+                "type":"string",
+                "description": "is the destination ip an Ipv6 (field name in Sysmon is DestinationIsIpv6)"
+                },
+
+        "x_sysmon_dst_ip":{
+                "type":"string",
+                "description": "ip address destination (field name in Sysmon is DestinationIp)"
+                },
+
+        "x_sysmon_dst_port":{
+                "type":"integer",
+                "description": "Destination port number (field name in Sysmon is DestinationPort)"
+                },
+
+        "x_sysmon_dst_port_name":{
+                "type":"string",
+                "description": "Name of the destination port (field name in Sysmon is DestinationPortName)"
+                }
+
+	},
+    "additionalProperties": false,
+    "required":["type"]
+
+}

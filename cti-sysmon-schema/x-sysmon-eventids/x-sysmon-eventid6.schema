@@ -1,0 +1,49 @@
+{
+   "id": "x-sysmon-eventid6.schema",
+   "$schema": "http://json-schema.org/draft-04/schema#",
+   "title": "x-sysmon-eventid6",
+   "description": "This is a representation of Sysmon's Event ID 6 (Driver loaded) schema. The driver loaded events provides information about a driver being loaded on the system.",
+   "type": "object",
+   "properties": {
+
+	"type": {
+		"type": "string",
+		"description": "The value of this property MUST be `x-sysmon-eventid6`.",
+		"enum": ["x-sysmon-eventid6"]
+		},
+
+	"x_sysmon_event_date_creation": {
+		"$ref": "../x_sysmon_common/x_sysmon_event_date_creation.json",
+		"description": "Time in UTC when event was created (field name in Sysmon is UtcTime)"
+		},
+
+	"x_sysmon_driver_loaded":{
+		"type":"string",
+		"description": "Full path of the driver loaded. (field name in Sysmon is ImageLoaded)"
+		},
+
+	"x_sysmon_driver_is_signed":{
+                "type":"boolean",
+                "description": "is the driver loaded signed (field name in Sysmon is Signed)"
+                },
+
+	"x_sysmon_driver_signature":{
+                "type":"string",
+                "description": "The signer (field name in Sysmon is Signature)"
+                },
+
+	"x_sysmon_driver_signature_status":{
+                "type":"string",
+                "description": "Status of the signature (field name in Sysmon is SignatureStatus)"
+                },
+
+	"x_sysmon_hash": {
+                "$ref": "../x_sysmon_common/x_sysmon_hash.json",
+                "description": "Hashes captured by sysmon driver (field name in Sysmon is Hashes)"
+                }
+
+    },
+    "additionalProperties": false,
+    "required":["type"]
+
+}
