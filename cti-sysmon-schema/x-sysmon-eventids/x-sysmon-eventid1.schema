@@ -1,0 +1,129 @@
+{
+   "id": "x-sysmon-eventid1.schema",
+   "$schema": "http://json-schema.org/draft-04/schema#",
+   "title": "x-sysmon-eventid1",
+   "description": "This is a representation of Sysmon's Event ID 1 schema. The process creation event provides extended information about a newly created process.",
+   "type": "object",
+   "properties": {
+
+	"type": {
+		"type": "string",
+		"description": "The value of this property MUST be `x-sysmon-eventid1`.",
+		"enum": ["x-sysmon-eventid1"]
+		},
+
+	"x_sysmon_event_date_creation": {
+		"$ref": "../x_sysmon_common/x_sysmon_event_date_creation.json",
+		"description": "Time in UTC when event was created (field name in Sysmon is UtcTime)"
+		},
+
+	"x_sysmon_process_guid": {
+                "$ref": "../x_sysmon_common/x_sysmon_process_guid.json",
+                "description": "Process Guid of the process that got spawned/created (child) (field name in Sysmon is ProcessGuid)"
+                },
+
+	"x_sysmon_process_id": {
+                "$ref": "../x_sysmon_common/x_sysmon_process_id.json",
+                "description": "Process ID used by the os to identify the created process (child) (field name in Sysmon is ProcessId)"
+                },
+
+	"x_sysmon_process_name": {
+                "$ref": "../x_sysmon_common/x_sysmon_process_name.json",
+                "description": "The name of the executable without full path related to the process being spawned/created in the event. Considered also the child or source process (field name in Sysmon is Image)"
+                },
+
+	"x_sysmon_process_path": {
+                "$ref": "../x_sysmon_common/x_sysmon_process_path.json",
+                "description": "File path of the process being spawned/created. Considered also the child or source process (field name in Sysmon is Image)"
+                },
+
+	"x_sysmon_file_version": {
+                "$ref": "../x_sysmon_common/x_sysmon_file_version.json",
+                "description": "Version of the image associated with the main process (child) (field name in Sysmon is FileVersion)"
+                },
+
+	"x_sysmon_file_description": {
+                "$ref": "../x_sysmon_common/x_sysmon_file_description.json",
+                "description": "Description of the image associated with the main process (child) (field name in Sysmon is Description)"
+                },
+
+	"x_sysmon_file_product": {
+                "$ref": "../x_sysmon_common/x_sysmon_file_product.json",
+                "description": "Product name the image associated with the main process (child) belongs to (field name in Sysmon is Product)"
+                },
+
+	"x_sysmon_file_company": {
+                "$ref": "../x_sysmon_common/x_sysmon_file_company.json",
+                "description": "Company name the image associated with the main process (child) belongs to (field name in Sysmon is Company)"
+                },
+
+	"x_sysmon_process_command_line":{
+		"type":"string",
+		"description": "Arguments which were passed to the executable associated with the main process. (field name in Sysmon is CommandLine)"
+		},
+
+	"x_sysmon_file_current_directory":{
+                "type":"string",
+                "description": "The path without the name of the image associated with the process. (field name in Sysmon is CurrentDirectory)"
+                },
+
+	"x_sysmon_user_name": {
+                "$ref": "../x_sysmon_common/x_sysmon_user_name.json",
+                "description": "Name of the account who created the process (child) . It usually contains domain name and user name (Parsed to show only username without the domain) (field name in Sysmon is ParentCommandLine)"
+                },
+
+	"x_sysmon_user_logon_guid":{
+                "type":"string",
+                "description": "Logon GUID of the user who created the new process. Value that can help you correlate this event with others that contain the same Logon GUID (Sysmon Events) (field name in Sysmon is LogonGuid)"
+                },
+
+	"x_sysmon_user_logon_id":{
+                "type":"integer",
+                "description": "Login ID of the user who created the new process. Value that can help you correlate this event with others that contain the same Logon ID (field name in Sysmon is LogonId)"
+                },
+
+	"x_sysmon_user_session_id":{
+                "type":"integer",
+                "description": "ID of the session the user belongs to. (field name in Sysmon is TerminalSessionId)"
+                },
+
+	"x_sysmon_process_integrity_level":{
+                "type":"string",
+                "description": "Integrity label assigned to a process (field name in Sysmon is IntegrityLevel)"
+                },
+
+	"x_sysmon_hash": {
+                "$ref": "../x_sysmon_common/x_sysmon_hash.json",
+                "description": "Hashes captured by sysmon driver (field name in Sysmon is Hashes)"
+                },
+
+	"x_sysmon_process_parent_guid":{
+                "type":"string",
+                "description": "ProcessGUID of the process that spawned/created the main process (child) (field name in Sysmon is ParentProcessGuid)"
+                },
+
+	"x_sysmon_process_parent_id":{
+                "type":"integer",
+                "description": "Process ID of the process that spawned/created the main process (child) (field name in Sysmon is ParentProcessId)"
+                },
+
+	"x_sysmon_process_parent_name":{
+                "type":"string",
+                "description": "The name of the executable related to the target process (field name in Sysmon is ParentImage)"
+                },
+
+	"x_sysmon_process_parent_path":{
+                "type":"string",
+                "description": "File path that spawned/created the main process (field name in Sysmon is ParentImage)"
+                },
+
+	"x_sysmon_process_parent_command_line":{
+                "type":"string",
+                "description": "Arguments which were passed to the executable associated with the parent process (field name in Sysmon is ParentCommandLine)"
+                }
+
+    },
+    "additionalProperties": false,
+    "required":["type"]
+
+}
