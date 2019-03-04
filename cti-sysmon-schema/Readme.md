@@ -13,9 +13,10 @@ This folder contains common properties that will be used by different JSON schem
 This folder contains the JSON schemas that will represent the properties used by each Sysmon Event ID.
 
 ## Naming Convention 
-The following Sysmon JSON schemas are custom and thus start with "x-". (See Requirements of Custom Objects : http://docs.oasis-open.org/cti/stix/v2.0/stix-v2.0-part1-stix-core.html)
-The custom properties defined by these schemas start with "x_". (See Requirements of Custom Properties : http://docs.oasis-open.org/cti/stix/v2.0/stix-v2.0-part1-stix-core.html)
+The following Sysmon JSON schemas are custom and thus start with "x-". (See Requirements of Custom Objects : http://docs.oasis-open.org/cti/stix/v2.0/stix-v2.0-part1-stix-core.html).
+
+The custom properties defined by these schemas start with "x_". (See Requirements of Custom Properties : http://docs.oasis-open.org/cti/stix/v2.0/stix-v2.0-part1-stix-core.html).
 
 ## The Schemas & Validation 
 The following schemas are used to specify the different properties used by Sysmon, and are used to validate generated instances.
-We could have made one JSON schema having all the event ids using keywords like allof/oneof/anyof. However, we are restricting the schema so no additional properties are allowed (using "additionalProperties": false), and this makes the schema reject everything (See https://json-schema.org/understanding-json-schema/reference/combining.html).
+We could have made one JSON schema having all the event ids using keywords like allof/oneof/anyof. However, we are already restricting the schema so no additional properties are allowed (using "additionalProperties": false), and if combined with keywords it will makes the schema reject everything (See https://json-schema.org/understanding-json-schema/reference/combining.html).
